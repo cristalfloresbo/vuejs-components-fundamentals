@@ -35,41 +35,9 @@
       </div>
     </div>
   </script>
-
-    <!-- Import Vue.js and axios -->
     <script src="https://unpkg.com/vue@2"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
-    <!-- Your JavaScript Code :) -->
-    <script>
-        Vue.component('github-user-card', {
-            template: '#github-user-card-template',
-            props: {
-                username: {
-                    type: String,
-                    required: true
-                }
-            },
-            data() {
-                return {
-                    user: {}
-                }
-            },
-            created() {
-                axios.get(`https://api.github.com/users/${this.username}`)
-                    .then(response => {
-                        this.user = response.data
-                    })
-            }
-        })
-
-        new Vue({
-            el: '#app',
-            data: {
-                usernames: ['hootlex', 'rahaug', 'sdras', 'akryum', 'cristalfloresbo']
-            }
-        })
-    </script>
+    <script src="app.js"></script>
 </body>
 
 </html>
