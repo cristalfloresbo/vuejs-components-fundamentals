@@ -20,23 +20,27 @@
             <plan-picker></plan-picker>
         </div>
     </div>
+
     <script type="text/x-template" id="plan-picker-template">
-        <div class="plans">
-          <plan v-for="plan in plans" :name="plan"></plan>
-        </div>
-      </script>
+    <div class="plans">
+      <plan v-for="plan in plans" :name="plan" @select="selectPlan" :selected-plan="selectedPlan"></plan>
+    </div>
+  </script>
 
     <script type="text/x-template" id="plan-template">
-        <div class="plan">
-            <div class="description">
-                <span class="title">
-                    {{name}}
-                </span>
-            </div>
+    <div @click="select" class="plan" :class="{'active-plan': isSelected}">
+        <div class="description">
+          <span class="title">
+            {{name}}
+          </span>
         </div>
-    </script>
+      </div>
+  </script>
 
-    <script src="https://unpkg.com/vue@2"></script>
+
+    <script src="https://unpkg.com/vue"></script>
     <script src="app.js"></script>
     <link rel="stylesheet" href="style.css">
 </body>
+
+</html>
