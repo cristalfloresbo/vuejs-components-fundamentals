@@ -17,24 +17,26 @@
                 We travel the world to source the very best single origin coffee for you
             </h2>
 
-            <div class="plans">
-                <plan v-for="plan in plans" :name="plan"></plan>
-            </div>
+            <plan-picker></plan-picker>
         </div>
     </div>
+    <script type="text/x-template" id="plan-picker-template">
+        <div class="plans">
+          <plan v-for="plan in plans" :name="plan"></plan>
+        </div>
+      </script>
 
     <script type="text/x-template" id="plan-template">
-    <div class="plan">
-        <div class="description">
-          <span class="title">
-            {{name}}
-          </span>
+        <div class="plan">
+            <div class="description">
+                <span class="title">
+                    {{name}}
+                </span>
+            </div>
         </div>
-      </div>
-  </script>
+    </script>
 
-
-    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/vue@2"></script>
     <script src="app.js"></script>
     <link rel="stylesheet" href="style.css">
 </body>
